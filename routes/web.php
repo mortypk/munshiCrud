@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Livewire\Product\Products;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Invoice\Invoice;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/prod',Products::class)->name('product');
+Route::get('/inv',Invoice::class)->name('invoice');
