@@ -2,12 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\product>
  */
-class ProductFactory extends Factory
+class productFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,10 +19,13 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'item_name' => fake()->name(),
-            'item_description' => fake()->sentence(),
-            'item_price' => fake()->numberBetween(1,50),
-            'item_image' => 'image.jpg',
+            'name' => fake()->name(),
+            'description' => fake()->sentence(),
+            'price' => fake()->randomFloat(2,5, 100),
+            'stock' => fake()->randomNumber(3),
+            'image' => 'path/to/image.jpg',
+            'category_id' => Category::all()->random()->id,
+            'user_id' => User::all()->random()->id,
         ];
     }
 }

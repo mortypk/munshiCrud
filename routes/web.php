@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Livewire\Product\Products;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Invoice\Invoice;
+use App\Http\Livewire\Invoice\Invoices;
+use App\Http\Livewire\Product\Products;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/prod',Products::class)->name('product');
-Route::get('/inv',Invoice::class)->name('invoice');
+Route::get('/invoice',Invoices::class)->name('invoice');
+Route::get('/product',Products::class)->name('product');
