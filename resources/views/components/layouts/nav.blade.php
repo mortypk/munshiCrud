@@ -10,5 +10,5 @@
         <x-theme.nav.dropdown.link>Electronic</x-theme.nav.dropdown.link>
     </x-theme.nav.dropdown>
     <div class="flex-grow"></div>
-    <x-theme.nav.link>Login</x-theme.nav.link>
+    <x-theme.nav.link href="{{ url('login') }}">Login</x-theme.nav.link>
 </x-theme.nav.bar>
