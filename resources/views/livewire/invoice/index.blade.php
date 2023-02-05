@@ -1,6 +1,6 @@
 <div>
     <x-layouts.nav></x-layouts.nav>
-    <div class="relative">
+    <div x-data="" class="relative">
         <input
             type="text"
             class="form-input"
