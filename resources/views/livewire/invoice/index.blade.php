@@ -29,8 +29,7 @@
                         data="{{ $product->id }}"
                         x-on:mouseover="itemId = {{ $i }}"
                         x-on:click="$wire.set('selectedId',{{ $product->id }})"
-                        x-bind:class="{ 'bg-blue-300' : itemId === {{ $i }} }"
-                        >
+                        x-bind:class="{ 'bg-blue-300' : itemId === {{ $i }} }">
                         {!! str_replace($search,"<span class='bg-yellow-300'>$search</span>",$product->name) !!}
                         {!! str_replace($search,"<span class='bg-yellow-300'>$search</span>",$product->description) !!}
                     </a>
