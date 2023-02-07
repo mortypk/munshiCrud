@@ -10,7 +10,7 @@ class Invoices extends Component
 {
     public $search ='';
     public $showDropdown = false;
-    public $highlightIndex=0;
+    public $selectedId=0;
     public $products;
     public function render()
     {
@@ -24,7 +24,6 @@ class Invoices extends Component
     {
         $this->search="";
         $this->products="";
-        $this->highlightIndex=0;
     }
     public function archive()
     {
@@ -35,23 +34,7 @@ class Invoices extends Component
     {
         $this->showDropdown = false;
     }
-    public function incrementHighlight()
-    {
-        if ($this->highlightIndex === count($this->products) - 1) {
-            $this->highlightIndex = 0;
-            return;
-        }
-        $this->highlightIndex++;
-    }
- 
-    public function decrementHighlight()
-    {
-        if ($this->highlightIndex === 0) {
-            $this->highlightIndex = count($this->products) - 1;
-            return;
-        }
-        $this->highlightIndex--;
-    }
+    
     public function selectContact()
     {
         $contact = $this->prdoucts[$this->highlightIndex] ?? null;
